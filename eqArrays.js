@@ -1,7 +1,5 @@
-// FUNCTION IMPLEMENTATION
-const assertEqual = function(actual, expected) {
-  return actual === expected;
-};
+const assertEqual = require('./assertEqual');
+
 const eqArrays = function(array1, array2) {
   let areEqual = true;
   if (array1.length === array2.length) {
@@ -14,10 +12,4 @@ const eqArrays = function(array1, array2) {
   console.log(areEqual);
 };
 
-// TEST CODE
-eqArrays([1, 2, 3], [1, 2, 3]); // => true
-eqArrays([1, 2, 3], [3, 2, 1]); // => false
-eqArrays([1, 2, 3], ["3", 2, 1]); // => false
-
-eqArrays(["1", "2", "3"], ["1", "2", "3"]); // => true
-eqArrays(["1", "2", "3"], ["1", "2", 3]); // => false
+module.exports = eqArrays;
