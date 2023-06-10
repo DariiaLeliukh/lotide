@@ -1,14 +1,42 @@
-const assertEqual = require('../assertEqual');
 const tail = require('../tail');
+
+const expect = require('chai').expect;
+const assert = require('chai').assert;
 
 // TEST CODE
 const result = tail(["Hello", "Lighthouse", "Labs"]);
-assertEqual(result.length, 2); // ensure we get back two elements
-assertEqual(result[0], "Lighthouse"); // ensure first element is "Lighthouse"
-assertEqual(result[1], "Labs"); // ensure second element is "Labs"
+console.log(tail(["Hello", "Lighthouse", "Labs"]));
 
-const result2 = tail([]); //tail of empty array
-console.log(result2);
+console.log(result.length, 2); // ensure we get back two elements
+console.log(result[0], "Lighthouse"); // ensure first element is "Lighthouse"
+console.log(result[1], "Labs"); // ensure second element is "Labs"
 
-const result3 = tail(["Hello"]); //tail of 1 element array
-console.log(result3);
+
+describe("#tail", () => {
+  it("returns [] for tail([\"Hello\"])", () => {
+    const result = tail(["Hello"]);
+    expect(result).to.be.an("array").that.is.empty;
+  });
+
+  it("returns [] for tail([])", () => {
+    const result = tail([]);
+    assert.deepEqual(result, []);
+    //expect(result).to.be.an("array").that.is.empty;
+  });
+
+  it("returns 2 for length of tail([\"Hello\", \"Lighthouse\", \"Labs\"])", () => {
+    const result = tail(["Hello", "Lighthouse", "Labs"]);
+    assert.strictEqual(result.length, 2);
+  });
+
+  it("returns \"Lighthouse\" for result[0] of tail([\"Hello\", \"Lighthouse\", \"Labs\"])", () => {
+    const result = tail(["Hello", "Lighthouse", "Labs"]);
+    assert.strictEqual(result[0], "Lighthouse");
+  });
+
+  it("returns \"Labs\" for result[1] of tail([\"Hello\", \"Lighthouse\", \"Labs\"])", () => {
+    const result = tail(["Hello", "Lighthouse", "Labs"]);
+    assert.strictEqual(result[1], "Labs");
+  });
+
+});
