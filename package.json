@@ -1,7 +1,7 @@
 {
-  "name": "lotide",
+  "name": "lotide-rilel",
   "version": "1.0.0",
-  "description": "",
+  "description": "Lotide library. This project was created and published by me as part of my learnings at Lighthouse Labs.",
   "main": "assertArraysEqual.js",
   "directories": {
     "test": "test"
