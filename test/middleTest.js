@@ -4,7 +4,6 @@ const expect = require('chai').expect;
 
 describe("#middle", () => {
   it("returns [] for middle([1])", () => {
-    //expect(middle([1])).to.eql([]);
     expect(middle([1])).to.be.an("array").that.is.empty;
   });
 

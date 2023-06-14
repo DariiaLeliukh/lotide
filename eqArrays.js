@@ -9,7 +9,7 @@ const eqArrays = function(array1, array2) {
       }
     }
   } else areEqual = false;
-  console.log(areEqual);
+  return areEqual;
 };
 
 module.exports = eqArrays;
